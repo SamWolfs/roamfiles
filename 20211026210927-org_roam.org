@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a48a5a17-6036-4a06-a85e-1f9d1ff8263e
+:END:
+#+title: Org-roam
+
+Org-roam is a plain-text knowledge management system for [[id:35ac596c-62b2-44e1-b4ce-68433fdb52ef][Org-mode]]. Org-roam borrows principes from the [[id:caba61f7-b2b3-4a16-9c38-08387011e940][Zettelkasten]] method, providing a solution for non-hierarchical note-taking.

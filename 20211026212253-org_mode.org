@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       35ac596c-62b2-44e1-b4ce-68433fdb52ef
+:END:
+#+title: Org-mode
+
+A GNU Emacs major mode for keeping notes, authoring documents, computational notebooks, [[id:8db75bd0-759d-40e9-97b4-602acf83d3a3][Literate programming]], maintaining to-do lists, planning projects, and more — in a fast and effective plain text system.

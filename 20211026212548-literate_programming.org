@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       8db75bd0-759d-40e9-97b4-602acf83d3a3
+:END:
+#+title: Literate programming
+
+Literate programming is a programming paradigm introduced by Donald Knuth in which computer programs are written through a combination of natural language, explaining the logic of the program, and source code, describing the execution of the program. Literate programming tools can then be used to generate different representations of the source file:
+
+- /tangled/ code which can be compiled or executed by the computer.
+- /woven/ documentation which is readable by humans.
+
+The power of literate programming lies in the ability to create formatted and structured documents, making the source file more readable and interactable.
+
+** Examples
+
+- Jupyter Notebooks
+- Elixir Doctests
+- [[id:35ac596c-62b2-44e1-b4ce-68433fdb52ef][Org-mode]]
