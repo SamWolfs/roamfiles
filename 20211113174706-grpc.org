@@ -2,3 +2,38 @@
 :ID:       73e3e751-c021-4c2b-9bd4-26bf04a08a14
 :END:
 #+title: gRPC
+
+gRPC is a [[id:f21f0ad7-b352-4adf-b09b-f45e41023b5e][Remote Procedure Call]] (RPC) framework that can use [[id:5184f721-f61a-4ea3-a6d0-a82c08bf8e76][Protocol Buffers]] as both its Interface Definition Language (IDL) and as its underlying message interchange format. In gRPC, a client application can directly call a method on a server application (on a different machine) as if it were a local object. To achieve this, gRPC expects a service definition specifying the methods (including their parameters and return types) that can be called by a client; using this definition and a special gRPC plugin for ~protoc~, gRPC can then generate client and server code as well as the regular protocol buffer code. This make it especially easy to mix and match client and server platforms as they can simply rely on gRPC and protocol buffers for interfacing.
+
+** Quickstart
+
+*** Python
+- Install Python any way you like, which should be through [[https://asdf-vm.com/][asdf]].
+- Upgrade Pip just in case
+  #+begin_src sh
+  python -m pip install --upgrade pip
+  #+end_src
+- Install gRPC and gRPC-tooling
+  #+begin_src sh
+  python -m pip install grpcio
+  python -m pip install grpcio-tools
+  #+end_src
+
+** Examples
+
+*** Service
+
+#+begin_src protobuf
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+#+end_src

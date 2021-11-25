@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       465dae9c-7207-404b-b0af-168f297b1c55
+:END:
+#+title: Meta-Programming
+
+Meta-programming is a programming technique in which computer programs are written by other programs.
+
+** Template Meta-Programming (TMP)
+Code is generated using pre-defined templates and then merged with the rest of the source code. Alternatively, entire standalone libraries can be generated and called from the *main* program.
+
+*** TMP examples
+- [[id:5184f721-f61a-4ea3-a6d0-a82c08bf8e76][Protocol Buffers]] compiler: generates classes/structs/... based on definitions written in Protobuf.
+
+** Macros
+A macro is a computer program that given a certain input will produce a new program as output. Macros do this by operating directly on the abstract syntax tree (AST), returning a new AST as a result; this makes it possible for macros to extend the programming language's existing syntax.
+
+*** Macros examples
+- LISP
+- [[id:51365aa8-e8d4-4e55-b907-dea389baee9d][Meta-Programming (Elixir)]]

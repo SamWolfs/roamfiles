@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       f21f0ad7-b352-4adf-b09b-f45e41023b5e
+:END:
+#+title: Remote Procedure Call

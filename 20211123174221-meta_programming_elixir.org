@@ -1,0 +1,80 @@
+:PROPERTIES:
+:ID:       51365aa8-e8d4-4e55-b907-dea389baee9d
+:END:
+#+title: Meta-Programming (Elixir)
+
+** Quote/Unquote
+Quoting an expression turns that expression into its Abstract Syntax Tree (AST) equivalent.
+#+begin_src elixir
+quote do: 1 + 2
+#+end_src
+
+~Macro.to_string/2~ converts an AST back to its string equivalent.
+#+begin_src elixir
+Macro.to_string(quote do: 1 + 2)
+#+end_src
+
+To inject a quoted value inside a quoted expression, use ~unquote/1~.
+#+begin_src elixir
+number = quote do: 5
+Macro.to_string(quote do: 1 + unquote(number))
+#+end_src
+
+Not all values are valid quoted expressions, but /can/ be expressed as a quoted expression:
+#+begin_src elixir
+quote do: %{hello: :world}
+#+end_src
+
+To inject such expressions inside a quoted expression, use ~escape/1~.
+#+begin_src elixir
+escaped = Macro.escape(%{hello: :world})
+expr = quote do: Map.get(unquote(escaped), :hello)
+Macro.to_string(expr)
+#+end_src
+
+~unquote/1~ cannot be called from outside of ~quote/2~ blocks; however, it's important to keep in mind that arguments passed to a macro are passed as quoted (meaning they are not evaluated). For example, since ~def~ is a macro, the ~do~ block is quoted. [[[https://elixirforum.com/t/using-unquote-outside-of-quote-block/6179/3][Reference]]]
+#+begin_src elixir
+defmodule Test do
+  number = 5
+  def f(number) do
+    unquote(number)
+  end
+end
+Test.f(10)
+#+end_src
+
+To simultaneously ~unquote/1~ and expand a list of arguments, use ~unquote_splicing/1~.
+#+begin_src elixir
+list = [2, 3]
+quote do: [1, unquote_splicing(list), 4]
+#+end_src
+
+** Macros
+To showcase the difference between macros and regular functions, let's take a look at a simple example.
+#+begin_src elixir
+defmodule Math do
+  defmacro square_macro(x) do
+    quote do
+      unquote(x) * unquote(x)
+    end
+  end
+
+  def square_fun(x) do
+    x * x
+  end
+end
+
+defmodule Example do
+require Math
+  num = fn ->
+    IO.inspect(5, label: "Evaluating")
+  end
+  IO.inspect(Math.square_macro(num.()), label: "MACRO")
+  IO.inspect(Math.square_fun(num.()), label: "FUN")
+  expr = quote do: Math.square_macro(num.())
+  res = Macro.expand_once(expr, __ENV__)
+  Macro.to_string(res)
+end
+#+end_src
+
+~IO.inspect/2~ was called twice when executing the macro version; this is due to the fact that the whole function was passed as a quoted expression and injected into the macro's body. In case of the function version, our anonymous function was evaluated before the function body, so ~x~ simply evaluated to ~5~.
