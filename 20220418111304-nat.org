@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       ad3da51e-1eeb-4ab5-8ae0-326e66b5e967
+:END:
+#+title: NAT
+
+The Network address translation (NAT) protocol provides a method for mapping an IP address space to another one, before transferring information. It's most commonly used to allow a single public IP address to serve an entire private network and plays a big role in the IPv4 conservation effort by allowing re-use of IP address within private networks.
+
+** Translation Methods
+*** TODO create method table
+*** Full-cone NAT
+:PROPERTIES:
+:ID:       6596c933-8a83-49fb-b156-f4f1b4035298
+:END:
+Also known as one-to-one NAT, allows communication at ~extIP/extPort~ from any origin.
+*** Address-restricted NAT
+:PROPERTIES:
+:ID:       7c0dd8c3-9feb-446e-825c-691e07588a23
+:END:
+Allows communication at ~extIP/extPort~ from any origin ~destIP~ that has an entry in the NAT table.
+*** Port-restricted NAT
+:PROPERTIES:
+:ID:       a6f63eff-46f1-4661-8896-673f63be679b
+:END:
+Allows communication at ~extIP/extPort~ from any origin ~destIP:destPort~ that has an entry in the NAT table.
+*** Symmetric NAT
+:PROPERTIES:
+:ID:       4c9e3eba-ee1a-4dd0-916f-991f560cc8e0
+:END:
+Allows communication at ~extIP/extPort~ from the origin ~destIP:destPort~ mapped to ~extIP/extPort~ in the NAT table.

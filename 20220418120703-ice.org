@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       51a612c5-904b-4c9a-86f1-f07a4e0aa056
+:END:
+#+title: ICE
+
+Interactive Connectivity Establishment (ICE) is a technique for finding the most optimal path for two computers to communicate in a peer-to-peer network.

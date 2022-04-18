@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       59823f89-7bea-4003-b136-454e4877e101
+:END:
+#+title: SDP
+
+Session Description Protocol (SDP)
+
+** TODO expand

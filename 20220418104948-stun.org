@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       55ba0245-fed1-4f2a-925c-c680e1d6d33d
+:END:
+#+title: STUN
+
+Session Traversal Utilities for [[id:ad3da51e-1eeb-4ab5-8ae0-326e66b5e967][NAT]] (STUN) is a tool used to set up communication between clients/servers behind a NAT firewall. STUN is compatible with three (3) types of NAT: [[id:6596c933-8a83-49fb-b156-f4f1b4035298][Full-cone NAT]], [[id:7c0dd8c3-9feb-446e-825c-691e07588a23][Address-restricted NAT]] and [[id:a6f63eff-46f1-4661-8896-673f63be679b][Port-restricted NAT]]. When dealing with [[id:4c9e3eba-ee1a-4dd0-916f-991f560cc8e0][Symmetric NAT]], consider [[id:bc4a1032-bb15-42c4-8ecc-aedf6975e754][TURN]] instead.
+
+** Common scenario
+In a common scenario, one or more clients send a /binding request/ to a STUN server, to which the STUN server replies with the public IP address and port assigned to the client(s). It is then up to the clients to communicate their respective public IP addresses and ports through e.g. a database or websocket. Once a client has knowledge of another client's public IP address and port, it becomes possible for both clients to establish a direct connection.
+
+** Ports
+- UDP/TCP: 3478
+- TLS: 5349

@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       bc4a1032-bb15-42c4-8ecc-aedf6975e754
+:END:
+#+title: TURN
+
+Traversal Using Relays around NAT (TURN) is a protocol that assists in the traversal of [[id:ad3da51e-1eeb-4ab5-8ae0-326e66b5e967][NAT]] or firewalls, especially for clients behind [[id:4c9e3eba-ee1a-4dd0-916f-991f560cc8e0][Symmetric NAT]].
+
+** TODO expand
