@@ -3,4 +3,8 @@
 :END:
 #+title: Org-roam
 
-Org-roam is a plain-text knowledge management system for [[id:35ac596c-62b2-44e1-b4ce-68433fdb52ef][Org-mode]]. Org-roam borrows principes from the [[id:caba61f7-b2b3-4a16-9c38-08387011e940][Zettelkasten]] method, providing a solution for non-hierarchical note-taking.
+Org-roam is a plain-text knowledge management system for [[id:35ac596c-62b2-44e1-b4ce-68433fdb52ef][Org-mode]]. Org-roam borrows principles from the [[id:caba61f7-b2b3-4a16-9c38-08387011e940][Zettelkasten]] method, providing a solution for non-hierarchical note-taking.
+
+** Useful DOOM Emacs keybindings
+- ~<space> n r f~ find node
+- ~<space> n r i~ insert node
